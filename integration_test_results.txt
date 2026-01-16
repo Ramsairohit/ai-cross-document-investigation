@@ -1,0 +1,99 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\suhit\ai-cross-document-investigation\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\suhit\ai-cross-document-investigation
+configfile: pyproject.toml
+plugins: anyio-4.12.1, Faker-40.1.0, langsmith-0.6.2, asyncio-1.3.0
+asyncio: mode=auto, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 5 items
+
+tests/test_integration.py::test_stage_3_to_stage_4_connection PASSED     [ 20%]
+tests/test_integration.py::test_stage_4_to_stage_5_connection PASSED     [ 40%]
+tests/test_integration.py::test_stage_5_to_stage_6_connection PASSED     [ 60%]
+tests/test_integration.py::test_stage_5_to_stage_7_connection PASSED     [ 80%]
+tests/test_integration.py::test_full_pipeline_flow PASSED                [100%]
+
+============================== warnings summary ===============================
+tests/test_integration.py::test_stage_3_to_stage_4_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_3_parsing\models.py:16: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ParsedBlock(BaseModel):
+
+tests/test_integration.py::test_stage_3_to_stage_4_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_3_parsing\models.py:55: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class StructuralParseResult(BaseModel):
+
+tests/test_integration.py::test_stage_3_to_stage_4_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_3_parsing\models.py:92: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ParsingConfig(BaseModel):
+
+tests/test_integration.py::test_stage_3_to_stage_4_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_4_cleaning\models.py:17: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class NormalizedTimestamp(BaseModel):
+
+tests/test_integration.py::test_stage_3_to_stage_4_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_4_cleaning\models.py:47: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class CleanedBlock(BaseModel):
+
+tests/test_integration.py::test_stage_3_to_stage_4_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_4_cleaning\models.py:93: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class CleaningResult(BaseModel):
+
+tests/test_integration.py::test_stage_3_to_stage_4_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_4_cleaning\models.py:137: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class CleaningConfig(BaseModel):
+
+tests/test_integration.py::test_stage_4_to_stage_5_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:16: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class BlockInput(BaseModel):
+
+tests/test_integration.py::test_stage_4_to_stage_5_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:44: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class Chunk(BaseModel):
+
+tests/test_integration.py::test_stage_4_to_stage_5_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:84: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ChunkingConfig(BaseModel):
+
+tests/test_integration.py::test_stage_4_to_stage_5_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:107: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ChunkingResult(BaseModel):
+
+tests/test_integration.py::test_stage_5_to_stage_6_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_6_ner\models.py:43: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ExtractedEntity(BaseModel):
+
+tests/test_integration.py::test_stage_5_to_stage_6_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_6_ner\models.py:88: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ChunkInput(BaseModel):
+
+tests/test_integration.py::test_stage_5_to_stage_6_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_6_ner\models.py:123: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class NERResult(BaseModel):
+
+tests/test_integration.py::test_stage_5_to_stage_6_connection
+  C:\Users\suhit\ai-cross-document-investigation\.venv\lib\site-packages\spacy\util.py:969: UserWarning: [W095] Model 'en_core_web_sm' (3.7.1) was trained with spaCy v3.7.2 and may not be 100% compatible with the current version (3.8.11). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+    warnings.warn(warn_msg)
+
+tests/test_integration.py::test_stage_5_to_stage_7_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_7_embeddings\models.py:17: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class VectorRecord(BaseModel):
+
+tests/test_integration.py::test_stage_5_to_stage_7_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_7_embeddings\models.py:49: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class EmbeddingResult(BaseModel):
+
+tests/test_integration.py::test_stage_5_to_stage_7_connection
+  C:\Users\suhit\ai-cross-document-investigation\stage_7_embeddings\models.py:72: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class EmbeddingConfig(BaseModel):
+
+tests/test_integration.py::test_stage_5_to_stage_7_connection
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+tests/test_integration.py::test_stage_5_to_stage_7_connection
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+tests/test_integration.py::test_stage_5_to_stage_7_connection
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 5 passed, 21 warnings in 54.81s =======================

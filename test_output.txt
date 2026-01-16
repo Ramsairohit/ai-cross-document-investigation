@@ -1,0 +1,24 @@
+﻿python : C:\Program F
+iles\Python310\python
+.exe: No module 
+named pytest
+At line:1 char:1
++ python -m pytest te
+sts/test_stage_5_chun
+king/test_models.py 
+-v 2>&1 | ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (C:\Prog   
+ ram File...le na    
+med pytest:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 

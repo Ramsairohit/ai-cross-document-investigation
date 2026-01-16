@@ -1,0 +1,140 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\suhit\ai-cross-document-investigation\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\suhit\ai-cross-document-investigation
+configfile: pyproject.toml
+plugins: anyio-4.12.1, Faker-40.1.0, langsmith-0.6.2, asyncio-1.3.0
+asyncio: mode=auto, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 111 items
+
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckPageBoundary::test_empty_blocks PASSED [  0%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckPageBoundary::test_single_block PASSED [  1%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckPageBoundary::test_same_page PASSED [  2%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckPageBoundary::test_different_pages PASSED [  3%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckSpeakerBoundary::test_empty_blocks PASSED [  4%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckSpeakerBoundary::test_single_block PASSED [  5%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckSpeakerBoundary::test_same_speaker PASSED [  6%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckSpeakerBoundary::test_different_speakers PASSED [  7%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestCheckSpeakerBoundary::test_null_speakers PASSED [  8%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestValidateChunkBlocks::test_empty_blocks PASSED [  9%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestValidateChunkBlocks::test_valid_blocks PASSED [  9%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestValidateChunkBlocks::test_page_violation PASSED [ 10%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestValidateChunkBlocks::test_speaker_violation PASSED [ 11%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestGroupBlocksByBoundary::test_empty_blocks PASSED [ 12%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestGroupBlocksByBoundary::test_single_group PASSED [ 13%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestGroupBlocksByBoundary::test_multiple_groups_by_page PASSED [ 14%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestGroupBlocksByBoundary::test_multiple_groups_by_speaker PASSED [ 15%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestGroupBlocksByBoundary::test_order_preserved PASSED [ 16%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestGetBoundaryKey::test_with_speaker PASSED [ 17%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestGetBoundaryKey::test_without_speaker PASSED [ 18%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestBlocksShareBoundary::test_same_boundary PASSED [ 18%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestBlocksShareBoundary::test_different_page PASSED [ 19%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestBlocksShareBoundary::test_different_speaker PASSED [ 20%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestConvertToBlockInput::test_from_dict PASSED [ 21%]
+tests/test_stage_5_chunking/test_chunk_rules.py::TestConvertToBlockInput::test_from_block_input PASSED [ 22%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkIdGenerator::test_sequential_ids PASSED [ 23%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkIdGenerator::test_custom_prefix PASSED [ 24%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkIdGenerator::test_reset PASSED [ 25%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_empty_blocks PASSED [ 26%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_single_block PASSED [ 27%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_provenance_tracking PASSED [ 27%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_page_boundary_respected PASSED [ 28%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_speaker_boundary_respected PASSED [ 29%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_token_limit_enforced PASSED [ 30%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_confidence_aggregation PASSED [ 31%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_text_is_exact_concatenation PASSED [ 32%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_case_and_document_ids_preserved PASSED [ 33%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocks::test_dict_input_supported PASSED [ 34%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocksEdgeCases::test_very_short_page PASSED [ 35%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocksEdgeCases::test_oversized_block_split PASSED [ 36%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocksEdgeCases::test_null_speakers_grouped PASSED [ 36%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkBlocksEdgeCases::test_interleaved_speakers_on_same_page PASSED [ 37%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkingGuarantees::test_chunks_never_cross_pages PASSED [ 38%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkingGuarantees::test_chunks_never_mix_speakers PASSED [ 39%]
+tests/test_stage_5_chunking/test_chunker.py::TestChunkingGuarantees::test_token_count_never_exceeds_max PASSED [ 40%]
+tests/test_stage_5_chunking/test_confidence.py::TestAggregateConfidence::test_empty_list PASSED [ 41%]
+tests/test_stage_5_chunking/test_confidence.py::TestAggregateConfidence::test_single_value PASSED [ 42%]
+tests/test_stage_5_chunking/test_confidence.py::TestAggregateConfidence::test_minimum_is_returned PASSED [ 43%]
+tests/test_stage_5_chunking/test_confidence.py::TestAggregateConfidence::test_all_same_value PASSED [ 44%]
+tests/test_stage_5_chunking/test_confidence.py::TestAggregateConfidence::test_includes_zero PASSED [ 45%]
+tests/test_stage_5_chunking/test_confidence.py::TestValidateConfidence::test_valid_range PASSED [ 45%]
+tests/test_stage_5_chunking/test_confidence.py::TestValidateConfidence::test_clamp_high PASSED [ 46%]
+tests/test_stage_5_chunking/test_confidence.py::TestValidateConfidence::test_clamp_low PASSED [ 47%]
+tests/test_stage_5_chunking/test_confidence.py::TestComputeChunkConfidence::test_empty_blocks PASSED [ 48%]
+tests/test_stage_5_chunking/test_confidence.py::TestComputeChunkConfidence::test_single_block PASSED [ 49%]
+tests/test_stage_5_chunking/test_confidence.py::TestComputeChunkConfidence::test_multiple_blocks PASSED [ 50%]
+tests/test_stage_5_chunking/test_confidence.py::TestComputeChunkConfidence::test_with_invalid_values PASSED [ 51%]
+tests/test_stage_5_chunking/test_confidence.py::TestComputeChunkConfidence::test_conservative_approach PASSED [ 52%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminism::test_100_runs_identical PASSED [ 53%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminism::test_chunk_ids_deterministic PASSED [ 54%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminism::test_order_deterministic PASSED [ 54%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminism::test_token_counts_deterministic PASSED [ 55%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminism::test_confidence_deterministic PASSED [ 56%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminism::test_source_block_ids_deterministic PASSED [ 57%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminismWithVariedInputs::test_empty_input_deterministic PASSED [ 58%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminismWithVariedInputs::test_single_block_deterministic PASSED [ 59%]
+tests/test_stage_5_chunking/test_determinism.py::TestDeterminismWithVariedInputs::test_many_blocks_deterministic PASSED [ 60%]
+tests/test_stage_5_chunking/test_models.py::TestBlockInput::test_valid_block PASSED [ 61%]
+tests/test_stage_5_chunking/test_models.py::TestBlockInput::test_speaker_optional PASSED [ 62%]
+tests/test_stage_5_chunking/test_models.py::TestBlockInput::test_default_confidence PASSED [ 63%]
+tests/test_stage_5_chunking/test_models.py::TestBlockInput::test_page_must_be_positive PASSED [ 63%]
+tests/test_stage_5_chunking/test_models.py::TestBlockInput::test_confidence_bounds PASSED [ 64%]
+tests/test_stage_5_chunking/test_models.py::TestBlockInput::test_json_serializable PASSED [ 65%]
+tests/test_stage_5_chunking/test_models.py::TestChunk::test_valid_chunk PASSED [ 66%]
+tests/test_stage_5_chunking/test_models.py::TestChunk::test_speaker_optional PASSED [ 67%]
+tests/test_stage_5_chunking/test_models.py::TestChunk::test_page_range_must_have_two_elements PASSED [ 68%]
+tests/test_stage_5_chunking/test_models.py::TestChunk::test_source_block_ids_required PASSED [ 69%]
+tests/test_stage_5_chunking/test_models.py::TestChunk::test_json_serializable PASSED [ 70%]
+tests/test_stage_5_chunking/test_models.py::TestChunkingConfig::test_default_values PASSED [ 71%]
+tests/test_stage_5_chunking/test_models.py::TestChunkingConfig::test_custom_values PASSED [ 72%]
+tests/test_stage_5_chunking/test_models.py::TestChunkingResult::test_empty_result PASSED [ 72%]
+tests/test_stage_5_chunking/test_models.py::TestChunkingResult::test_result_with_chunks PASSED [ 73%]
+tests/test_stage_5_chunking/test_pipeline.py::TestChunkingPipeline::test_init_default_config PASSED [ 74%]
+tests/test_stage_5_chunking/test_pipeline.py::TestChunkingPipeline::test_init_custom_config PASSED [ 75%]
+tests/test_stage_5_chunking/test_pipeline.py::TestChunkingPipeline::test_process_document PASSED [ 76%]
+tests/test_stage_5_chunking/test_pipeline.py::TestChunkingPipeline::test_process_cleaning_result PASSED [ 77%]
+tests/test_stage_5_chunking/test_pipeline.py::TestProcessDocumentSync::test_basic_processing PASSED [ 78%]
+tests/test_stage_5_chunking/test_pipeline.py::TestProcessDocumentSync::test_with_custom_config PASSED [ 79%]
+tests/test_stage_5_chunking/test_pipeline.py::TestProcessDocumentAsync::test_async_processing PASSED [ 80%]
+tests/test_stage_5_chunking/test_pipeline.py::TestProcessDocumentAsync::test_async_with_custom_config PASSED [ 81%]
+tests/test_stage_5_chunking/test_pipeline.py::TestProcessCleaningResultSync::test_process_cleaning_result PASSED [ 81%]
+tests/test_stage_5_chunking/test_pipeline.py::TestProcessCleaningResultSync::test_empty_blocks PASSED [ 82%]
+tests/test_stage_5_chunking/test_pipeline.py::TestStage6Compatibility::test_chunk_has_required_fields_for_ner PASSED [ 83%]
+tests/test_stage_5_chunking/test_pipeline.py::TestStage6Compatibility::test_chunk_can_be_converted_to_dict PASSED [ 84%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestGetEncoding::test_default_encoding PASSED [ 85%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestGetEncoding::test_encoding_cached PASSED [ 86%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokens::test_empty_string PASSED [ 87%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokens::test_simple_text PASSED [ 88%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokens::test_deterministic PASSED [ 89%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokens::test_longer_text_more_tokens PASSED [ 90%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokens::test_special_characters PASSED [ 90%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokensBatch::test_empty_list PASSED [ 91%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokensBatch::test_batch_matches_individual PASSED [ 92%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestCountTokensBatch::test_handles_empty_strings PASSED [ 93%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestSplitTextByTokens::test_empty_string PASSED [ 94%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestSplitTextByTokens::test_short_text_no_split PASSED [ 95%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestSplitTextByTokens::test_split_long_text PASSED [ 96%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestSplitTextByTokens::test_each_chunk_within_limit PASSED [ 97%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestSplitTextByTokens::test_deterministic_splitting PASSED [ 98%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestDeterminismGuarantee::test_100_runs_identical PASSED [ 99%]
+tests/test_stage_5_chunking/test_tokenizer.py::TestDeterminismGuarantee::test_varied_inputs_deterministic PASSED [100%]
+
+============================== warnings summary ===============================
+stage_5_chunking\models.py:16
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:16: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class BlockInput(BaseModel):
+
+stage_5_chunking\models.py:44
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:44: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class Chunk(BaseModel):
+
+stage_5_chunking\models.py:84
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:84: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ChunkingConfig(BaseModel):
+
+stage_5_chunking\models.py:107
+  C:\Users\suhit\ai-cross-document-investigation\stage_5_chunking\models.py:107: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+    class ChunkingResult(BaseModel):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 111 passed, 4 warnings in 1.96s =======================

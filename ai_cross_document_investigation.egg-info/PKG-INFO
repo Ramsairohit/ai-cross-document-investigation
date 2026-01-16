@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: ai-cross-document-investigation
+Version: 0.1.0
+Summary: Legally-defensible AI cross-document police investigation system
+Author-email: Your Police AI Team <dev@police-ai.local>
+License: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi>=0.110.0
+Requires-Dist: uvicorn[standard]>=0.29.0
+Requires-Dist: python-jose[cryptography]>=3.3.0
+Requires-Dist: passlib[bcrypt]>=1.7.4
+Requires-Dist: bcrypt>=4.1.2
+Requires-Dist: python-multipart>=0.0.9
+Requires-Dist: pydantic>=2.6.0
+Requires-Dist: pytesseract>=0.3.10
+Requires-Dist: pdfplumber>=0.11.0
+Requires-Dist: Pillow>=10.2.0
+Requires-Dist: opencv-python>=4.9.0
+Requires-Dist: spacy>=3.7.4
+Requires-Dist: nltk>=3.8.1
+Requires-Dist: regex>=2024.4.16
+Requires-Dist: tiktoken>=0.6.0
+Requires-Dist: sentence-transformers>=2.6.1
+Requires-Dist: faiss-cpu>=1.8.0
+Requires-Dist: neo4j>=5.18.0
+Requires-Dist: networkx>=3.2.1
+Requires-Dist: ollama>=0.1.7
+Requires-Dist: langchain-core>=0.1.42
+Requires-Dist: python-dateutil>=2.9.0
+Requires-Dist: dateparser>=1.2.0
+Requires-Dist: sqlalchemy>=2.0.28
+Requires-Dist: psycopg2-binary>=2.9.9
+Requires-Dist: structlog>=24.1.0
+Requires-Dist: python-json-logger>=2.0.7
+Requires-Dist: pytest>=8.1.1
+Requires-Dist: pytest-asyncio>=0.23.5
+Requires-Dist: ragas>=0.1.14
+Requires-Dist: tqdm>=4.66.2
+Requires-Dist: requests>=2.31.0
+Requires-Dist: docling>=2.67.0
+Requires-Dist: python-docx>=1.2.0
+Requires-Dist: numpy>=2.2.6
+Requires-Dist: python-dotenv>=1.2.1
+Requires-Dist: google-generativeai>=0.8.6
+Provides-Extra: dev
+Requires-Dist: black>=24.2.0; extra == "dev"
+Requires-Dist: ruff>=0.3.5; extra == "dev"
+Requires-Dist: mypy>=1.9.0; extra == "dev"
+Requires-Dist: pre-commit>=3.7.0; extra == "dev"
+Dynamic: license-file
+
+# ai-cross-document-investigation

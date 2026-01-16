@@ -1,0 +1,124 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-cross-document-investigation"
+version = "0.1.0"
+description = "Legally-defensible AI cross-document police investigation system"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+
+authors = [
+  { name = "Your Police AI Team", email = "dev@police-ai.local" }
+]
+
+dependencies = [
+  # =========================
+  # CORE API & SECURITY
+  # =========================
+  "fastapi>=0.110.0",
+  "uvicorn[standard]>=0.29.0",
+  "python-jose[cryptography]>=3.3.0",
+  "passlib[bcrypt]>=1.7.4",
+  "bcrypt>=4.1.2",
+  "python-multipart>=0.0.9",
+  "pydantic>=2.6.0",
+  # =========================
+  # OCR & DOCUMENT PROCESSING
+  # =========================
+  "pytesseract>=0.3.10",
+  "pdfplumber>=0.11.0",
+  "Pillow>=10.2.0",
+  "opencv-python>=4.9.0",
+  # =========================
+  # NLP & PREPROCESSING
+  # =========================
+  "spacy>=3.7.4",
+  "nltk>=3.8.1",
+  "regex>=2024.4.16",
+  "tiktoken>=0.6.0",
+  # =========================
+  # EMBEDDINGS & VECTOR SEARCH
+  # =========================
+  "sentence-transformers>=2.6.1",
+  "faiss-cpu>=1.8.0",
+  # =========================
+  # KNOWLEDGE GRAPH
+  # =========================
+  "neo4j>=5.18.0",
+  "networkx>=3.2.1",
+  # =========================
+  # LLM & RAG
+  # =========================
+  "ollama>=0.1.7",
+  "langchain-core>=0.1.42",
+  # =========================
+  # TIMELINE & DATE HANDLING
+  # =========================
+  "python-dateutil>=2.9.0",
+  "dateparser>=1.2.0",
+  # =========================
+  # DATABASES
+  # =========================
+  "sqlalchemy>=2.0.28",
+  "psycopg2-binary>=2.9.9",
+  # =========================
+  # LOGGING & AUDIT TRAIL
+  # =========================
+  "structlog>=24.1.0",
+  "python-json-logger>=2.0.7",
+  # =========================
+  # TESTING & EVALUATION
+  # =========================
+  "pytest>=8.1.1",
+  "pytest-asyncio>=0.23.5",
+  "ragas>=0.1.14",
+  # =========================
+  # UTILITIES
+  # =========================
+  "tqdm>=4.66.2",
+  "requests>=2.31.0",
+  "docling>=2.67.0",
+  "python-docx>=1.2.0",
+  "numpy>=2.2.6",
+  "python-dotenv>=1.2.1",
+  "google-generativeai>=0.8.6",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black>=24.2.0",
+  "ruff>=0.3.5",
+  "mypy>=1.9.0",
+  "pre-commit>=3.7.0"
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "B", "I"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["stage_2_extraction", "stage_3_parsing", "stage_4_cleaning", "stage_5_chunking", "stage_6_ner", "stage_7_embeddings", "stage_8_knowledge_graph", "stage_9_timeline", "stage_10_contradictions", "stage_11_rag"]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.setuptools.packages.find]
+include = ["stage_2_extraction*", "stage_3_parsing*", "stage_4_cleaning*", "stage_5_chunking*", "stage_6_ner*", "stage_7_embeddings*", "stage_8_knowledge_graph*", "stage_9_timeline*", "stage_10_contradictions*", "stage_11_rag*", "api*"]
+exclude = ["tests*", "evidence*", "audit_logs*", "evidence_storage*"]
